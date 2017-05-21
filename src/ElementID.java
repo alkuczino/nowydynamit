@@ -10,6 +10,7 @@ public enum ElementID {
     UpperWall(),
     Timer,
     Nick,
+    Monster(),
     Points;
 
 }
