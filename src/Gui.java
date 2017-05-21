@@ -66,8 +66,8 @@ public class Gui extends JFrame {
         public void actionPerformed(ActionEvent event){
 
 
-
-            JOptionPane.showMessageDialog(null,c.getHighScoreNames()[0] +"   " + c.getPoints()[0]);
+            Client.getHighScores(c,c.ip,Integer.toString(c.port));
+            JOptionPane.showMessageDialog(null,c.getHighScores());
         }
     }
     private class HandlerClass2 implements ActionListener{
@@ -80,14 +80,17 @@ public class Gui extends JFrame {
 
                     case 0:
                         JOptionPane.showMessageDialog(null, "You chose:" + "Easy");
+                        Client.getDifficulty(c,c.ip,Integer.toString(c.port),"easy");
                         break;
 
                     case 1:
                     JOptionPane.showMessageDialog(null, "You chose:" + "Medium");
+                        Client.getDifficulty(c,c.ip,Integer.toString(c.port),"medium");
                     break;
 
                     case 2:
                         JOptionPane.showMessageDialog(null, "You chose:" + "Hard");
+                        Client.getDifficulty(c,c.ip,Integer.toString(c.port),"hard");
                         break;
                 }
             String nick= JOptionPane.showInputDialog("Enter your nick");

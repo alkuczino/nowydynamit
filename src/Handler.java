@@ -100,6 +100,7 @@ public class Handler {
         int[][]tmpMap=c.getMap1();
         int pozX=0;
         int pozY=90;
+
         for (int[] index : tmpMap) {
 
             for (int i = 0; i < tmpMap.length; i++) {
@@ -127,5 +128,9 @@ public class Handler {
         tmpElement = new Player(80,160,this,ElementID.Player);
         addElement(tmpElement);
 
+    }
+    public void addMonster(){
+        tmpElement = new Monster(300,160,this,ElementID.Monster);
+        addElement(tmpElement);
     }
 }

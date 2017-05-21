@@ -10,6 +10,8 @@ import java.util.Scanner;
  * Klasa służąca do obsługi pliku konfiguracyjnego gry
  */
 public class Configuration {
+    public static int port;
+    public static String ip;
     /**
      * Zmienna przechowująca liczbę żyć
      */
@@ -33,6 +35,8 @@ public class Configuration {
     /**
      * Zmienna przechowująca poziom trudności
      */
+    private String[] highScores = new String[10];
+
     private int diffLevel = -1;
     /**
      * Tablica przechowująca dane o rozłożeniu obiektów na mapie
@@ -50,6 +54,9 @@ public class Configuration {
      * Metoda łądująca plik konfiguracyjny
      */
     public void loadConfiguration() {
+        port=10001;
+        ip="192.168.0.193";
+
         String tmp;
         int tmpInt;
         try {
@@ -195,6 +202,13 @@ public class Configuration {
      * Getter tablicy prezentującej układ obiektów na mapie
      *
      */
+
+    public String[] getHighScores(){
+        return highScores;
+    }
+    public void setHighScores(String[] tmp){
+        this.highScores=tmp;
+    }
     public int[][] getMap1() {
         return map1;
     }

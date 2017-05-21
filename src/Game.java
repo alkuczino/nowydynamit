@@ -18,7 +18,8 @@ import javax.swing.JFrame;
  */
 public class Game extends Canvas implements Runnable//extends Application
     {
-
+        public static String ip;
+        public static int port;
         Handler handler;
         public static final long serialVersionUID = 1L;
 
@@ -52,13 +53,15 @@ public class Game extends Canvas implements Runnable//extends Application
             handler.createLevel(x);
             handler.createUpperPanel(x,nick);
             handler.addPlayer();
+            handler.addMonster();
             this.addKeyListener(new MyKeyListener(handler));
         }
         /**
          * Konstruktor obiektu klasy Game
          */
         public Game(String nick,Configuration x){
-
+            Client.getMapSize(x,x.ip,Integer.toString(x.port));
+            Client.getLevel(x,x.ip,Integer.toString(x.port));
             this.nick =nick;
             this.x  = x ;
             this.frame = new JFrame();
